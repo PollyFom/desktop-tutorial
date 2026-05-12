@@ -1,0 +1,77 @@
+#include <iostream>
+#include <vector>
+#include <string>
+
+using namespace std;
+
+struct Student {
+    string name;
+    vector<int> grades;
+    double average;
+};
+
+int main() {
+    vector<Student> students;
+
+    // Student 1
+    Student s1;
+    s1.name = "Anna";
+    s1.grades.push_back(5);
+    s1.grades.push_back(4);
+    s1.grades.push_back(5);
+
+    int sum = 0;
+    for (int i = 0; i < s1.grades.size(); i++) {
+        sum += s1.grades[i];
+    }
+    s1.average = (double)sum / s1.grades.size();
+    students.push_back(s1);
+
+    // Student 2
+    Student s2;
+    s2.name = "Boris";
+    s2.grades.push_back(3);
+    s2.grades.push_back(4);
+    s2.grades.push_back(4);
+
+    sum = 0;
+    for (int i = 0; i < s2.grades.size(); i++) {
+        sum += s2.grades[i];
+    }
+    s2.average = (double)sum / s2.grades.size();
+    students.push_back(s2);
+
+    // Student 3
+    Student s3;
+    s3.name = "Vika";
+    s3.grades.push_back(5);
+    s3.grades.push_back(5);
+    s3.grades.push_back(5);
+
+    sum = 0;
+    for (int i = 0; i < s3.grades.size(); i++) {
+        sum += s3.grades[i];
+    }
+    s3.average = (double)sum / s3.grades.size();
+    students.push_back(s3);
+
+    // Output
+    cout << "All students:" << endl;
+    for (int i = 0; i < students.size(); i++) {
+        cout << students[i].name << ": " << students[i].average << endl;
+    }
+
+    cout << "\nArray size: " << students.size() << " students" << endl;
+
+    // Add one more
+    Student s4;
+    s4.name = "Dima";
+    s4.grades.push_back(4);
+    s4.grades.push_back(5);
+    s4.average = 4.5;
+    students.push_back(s4);
+
+    cout << "After adding: " << students.size() << " students" << endl;
+
+    return 0;
+}
